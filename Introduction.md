@@ -11,3 +11,4 @@
 # 基本控件
 ## 窗口类
 ### QMainWindow
+![QMainWindow](https://github.com/Yansf677/Learning-PyQt5/QMainWindow.png)
