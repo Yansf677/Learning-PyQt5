@@ -1,7 +1,7 @@
 # 认识PyQt5
   PyQt5 是Qt框架的Python语言实现，可以进行GUI编程。此外Python这类的包还有，Tkinter， wxPython， PyGTK等。
   
-  PyQt5环境的搭建(PyCharm)主要包括两步，一是PyQt5工具包；而是含有Qtdesigner的tools，均可以用pip安装：
+  PyQt5环境的搭建(PyCharm)主要包括两步，一是PyQt5工具包；二是含有Qtdesigner的tools，均可以用pip安装：  
   详细介绍先贴两个连接
   [1](https://blog.csdn.net/HuangZhang_123/article/details/78046706)
   [2](https://www.cnblogs.com/dalanjing/p/6978373.html)
@@ -11,4 +11,11 @@
 # 基本控件
 ## 窗口类
 ### QMainWindow
-![QMainWindow](https://github.com/Yansf677/Learning-PyQt5/QMainWindow.png)
+主窗口，包含菜单栏，工具栏，状态栏，标题栏等。
+### QWigdet
+基础窗口控件，用于建立界面  
+### QDialog  
+
+## 文本框类
+### QLabel  
+
