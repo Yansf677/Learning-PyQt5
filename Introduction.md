@@ -13,9 +13,29 @@
 ### QMainWindow
 主窗口，包含菜单栏，工具栏，状态栏，标题栏等。
 ### QWigdet
-基础窗口控件，用于建立界面  
+基础窗口控件，用于建立界面。  
 ### QDialog  
 
 ## 文本框类
 ### QLabel  
+用来显示不可编辑的文本或者图片。  
+### QLineEdit  
+单行文本框，可以输入单行字符串，多行输入需要用到`QTextEdit`  
+用法包括1. setText     2. setPlaceholderText(默认内容)     3. setInputMask(掩码)等  
+### QTextEdit 
+多行显示内容  
+
+## 按钮类
+按钮的基类为QAbstractButton,下面的各种按钮均继承该类。  
+### QPushButton
+单击执行命令的按钮。常用方法：1. setCheckable   2. toggle   3. setIcon   4. setEnabled    5. isChecked   6. setText  
+### QRadioButton  
+单选按钮：1. setCheckable  2. isChecked  3. setText  
+### QCheckBox 
+复选框： 1.setChecked   2. setText  
+其中可以设置三态复选框，即选中有两种形式，半选中与选中  
+
+## QComboBox
+
+
 
