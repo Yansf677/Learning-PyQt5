@@ -14,7 +14,6 @@
 主窗口，包含菜单栏，工具栏，状态栏，标题栏等。
 ### QWigdet
 基础窗口控件，用于建立界面。  
-### QDialog  
 
 ## 文本框类
 ### QLabel  
@@ -34,8 +33,28 @@
 ### QCheckBox 
 复选框： 1.setChecked   2. setText  
 其中可以设置三态复选框，即选中有两种形式，半选中与选中  
+### QComboBox
+下拉列表框，1. addItem()    2. currentText()    3. currentIndex  
+当选中一个选项时触发反应用Activate()  
+### QSpinBox
+计数器，通过单击增加或者减少当前的值， 1. setMinimum()   2. setMaximum()   3. Value()  
+### QSlider
+滑动条，滑动选择数值  
 
-## QComboBox
+## 对话类控件  
+QDialog, showDialog  
+### QMessageBox  
+用于显示消息的弹出式对话框，包括问答式(question), 警告(warning)等  
+### QInputDialog  
+获取交互的输入值  
+### QFontDialog  
+字体选择对话框  
+### QFileDialog  
+文件交互对话框, 1. get()openFilename   2. setFileMode  
+
+
+
+
 
 
 
