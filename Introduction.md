@@ -52,6 +52,7 @@ QDialog, showDialog
 ### QFileDialog  
 文件交互对话框, 1. get()openFilename   2. setFileMode  
 
+## 窗口绘图类
 
 
 
