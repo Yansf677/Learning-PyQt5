@@ -53,6 +53,10 @@ QDialog, showDialog
 文件交互对话框, 1. get()openFilename   2. setFileMode  
 
 ## 窗口绘图类
+### QPainter  
+在QWidget上执行绘图操作, 绘制方法放在QtGui.QPainter对象的begin()与end()之间  
+### QPen  
+用于绘制直线、曲线、多边形等其它形状  
 
 
 
