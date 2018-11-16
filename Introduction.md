@@ -57,7 +57,32 @@ QDialog, showDialog
 在QWidget上执行绘图操作, 绘制方法放在QtGui.QPainter对象的begin()与end()之间  
 ### QPen  
 用于绘制直线、曲线、多边形等其它形状  
+###  QBrush  
+用于填充矩形等多边形的纹理  
+### QPixmap  
+由于显示图像，通常是标签(Label)  
 
+## 日历与时间  
+### QCalendar  
+日历显示 1. setMinimumDate()   2. setMaximumDate()   3. setGridvisible()  
+### QDateTimeEdit  
+允许用户进行修改日期，可以设置日期的显示格式  
+
+### 菜单栏、工具栏与状态栏  
+## QMenuBar  
+并行的菜单为级联的menubar对象，二级菜单则为QAction对象  
+eg.  
+bar = self.menuBar()  
+file = bar.addMenu(“File”)  
+file.addAction("New")  
+file.triggered["New"].connect(self.function)  
+### QToolBar  
+工具栏，位于菜单栏下方，用法类似主菜单  
+### QStatusBar  
+状态栏  
+
+### QPrinter  
+嵌入到菜单栏或者状态栏中，将图片打印  
 
 
 
