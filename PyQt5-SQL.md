@@ -13,5 +13,5 @@ db.Conn = db.close()
 ## 执行语句  
 query = QSqlQuery()  
 query.exec_("SQL语句")  
-## 数据库模型视图  
+
 
