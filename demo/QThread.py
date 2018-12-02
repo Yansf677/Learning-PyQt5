@@ -1,54 +1,69 @@
+
+import sys
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
-import sys
+
+global sec
+sec = 0
 
 
-class MainWidget(QWidget):
-    def __init__(self, parent=None):
-        super(MainWidget, self).__init__(parent)
-        self.setWindowTitle("QThread 例子")
-        self.thread = Worker()
-        self.listFile = QListWidget()
-        self.btnStart = QPushButton('开始')
-        layout = QGridLayout(self)
-        layout.addWidget(self.listFile, 0, 0, 1, 2)
-        layout.addWidget(self.btnStart, 1, 1)
-        self.btnStart.clicked.connect(self.slotStart)
-        self.thread.sinOut.connect(self.slotAdd)
+class WorkThread(QThread):
+    trigger = pyqtSignal()
 
-    def slotAdd(self, file_inf):
-        self.listFile.addItem(file_inf)
-
-    def slotStart(self):
-        self.btnStart.setEnabled(False)
-        self.thread.start()
-
-
-class Worker(QThread):
-    sinOut = pyqtSignal(str)
-
-    def __init__(self, parent=None):
-        super(Worker, self).__init__(parent)
-        self.working = True
-        self.num = 0
-
-    def __del__(self):
-        self.working = False
-        self.wait()
+    def __int__(self):
+        super(WorkThread, self).__init__()
 
     def run(self):
-        while self.working == True:
-            file_str = 'File index {0}'.format(self.num)
-            self.num += 1
-            # 发出信号
-            self.sinOut.emit(file_str)
-            # 线程休眠2秒
-            self.sleep(2)
+        for i in range(2000000000):
+            pass
+
+        # 循环完毕后发出信号
+        self.trigger.emit()
+
+
+def countTime():
+    global sec
+    sec += 1
+    # LED显示数字+1
+    lcdNumber.display(sec)
+
+
+def work():
+    # 计时器每秒计数
+    timer.start(1000)
+    # 计时开始
+    workThread.start()
+    # 当获得循环完毕的信号时，停止计数
+    workThread.trigger.connect(timeStop)
+
+
+def timeStop():
+    timer.stop()
+    print("运行结束用时", lcdNumber.value())
+    global sec
+    sec = 0
 
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    demo = MainWidget()
-    demo.show()
+    top = QWidget()
+    top.resize(300, 120)
+
+    # 垂直布局类QVBoxLayout
+    layout = QVBoxLayout(top)
+    # 加个显示屏
+    lcdNumber = QLCDNumber()
+    layout.addWidget(lcdNumber)
+    button = QPushButton("测试")
+    layout.addWidget(button)
+
+    timer = QTimer()
+    workThread = WorkThread()
+
+    button.clicked.connect(work)
+    # 每次计时结束，触发 countTime
+    timer.timeout.connect(countTime)
+
+    top.show()
     sys.exit(app.exec_())
