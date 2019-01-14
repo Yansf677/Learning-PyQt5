@@ -3,13 +3,14 @@ PyQt5的API中用QSqlDatabase类用来连接数据库, 一个实例代表一次�
 不同的数据库驱动类型不同, 例如QMYSQL为MYSQL驱动程序  
 ## 连接数据库  
 from PyQt5.QtSql import QSqlDatabase  
-db = QSqlDatabase.addDatabase("QMYSQL")  
+db = QSqlDatabase.addDatabase("QMYSQL")  表示MySQL的接口
 db.setHostName("192.168.55.110")  
 db.setDatabaseName("user")   
 db.setUserName("root")  
 db.setPassword("123")  
 db.Conn = db.open()  
 db.Conn = db.close()  
+
 ## 执行语句  
 query = QSqlQuery()  
 query.exec_("SQL语句")  
