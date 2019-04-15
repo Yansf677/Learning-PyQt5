@@ -1,3 +1,3 @@
-# Notes of learning PyQt5
+# PyQt5
 
-## 利用Python写一个UI界面
+## 
